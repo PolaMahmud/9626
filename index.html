@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="slate" data-mode="auto">
+<!-- V3.1
+╔══════════════════════════════════════════════════════════╗
+║  THEME SYSTEM                                            ║
+║                                                          ║
+║  To change the color theme, edit data-theme above.       ║
+║  Available themes:                                       ║
+║    forest    — green & earthy (default)                  ║
+║    ocean     — deep blue & teal                          ║
+║    sunset    — warm coral & amber                        ║
+║    lavender  — soft purple & pink                        ║
+║    slate     — neutral gray & steel                      ║
+║    rose      — warm pink & burgundy                      ║
+║                                                          ║
+║  Users can toggle light/dark mode via the button         ║
+║  in the top-right corner. Their choice is saved.         ║
+╚══════════════════════════════════════════════════════════╝
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT 9626 — AS &amp; A Level Study Resources</title>
+<meta name="description" content="Free Cambridge AS &amp; A Level Information Technology 9626 study resources: chapter slides, textbook, syllabus, past paper questions and mark schemes.">
+<meta property="og:title" content="IT 9626 — AS &amp; A Level Study Resources">
+<meta property="og:description" content="Chapter slides, textbook, syllabus, questions &amp; mark schemes for Cambridge AS &amp; A Level Information Technology 9626.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://polamahmud.github.io/9626/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<script>
+(function(){
+var m = localStorage.getItem('it9626-mode');
+if (m === 'light' || m === 'dark') document.documentElement.setAttribute('data-mode', m);
+})();
+</script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ═══════ THEME PALETTES ═══════ */
+[data-theme="forest"] {
+--accent:#2D6A4F; --accent-lt:#E9F5EF; --accent-hv:#1E4D38;
+--sec:#1D5B9E; --sec-lt:#EAF1F9;
+--tri:#92650A; --tri-lt:#FEF5E0;
+--hi:#B04A2E; --hi-lt:#FDF0EC;
+--accent-dk:#52B788; --accent-lt-dk:#1A2E24; --accent-hv-dk:#74D4A4;
+--sec-dk:#6AACF0; --sec-lt-dk:#1A2533;
+--tri-dk:#E8B44A; --tri-lt-dk:#2A2210;
+--hi-dk:#E8845A; --hi-lt-dk:#2A1A14;
+}
+[data-theme="ocean"] {
+--accent:#1565A8; --accent-lt:#E3F0FB; --accent-hv:#0D4A7A;
+--sec:#0E7C6B; --sec-lt:#E0F5F0;
+--tri:#7C5C1E; --tri-lt:#FDF3DA;
+--hi:#9E3A5C; --hi-lt:#FBEDF2;
+--accent-dk:#5CADE8; --accent-lt-dk:#132A3D; --accent-hv-dk:#8CC8F2;
+--sec-dk:#4ECAB5; --sec-lt-dk:#0F2925;
+--tri-dk:#E0B44C; --tri-lt-dk:#2A2210;
+--hi-dk:#E07898; --hi-lt-dk:#2E1520;
+}
+[data-theme="sunset"] {
+--accent:#C2510E; --accent-lt:#FEF0E5; --accent-hv:#923C09;
+--sec:#8B6914; --sec-lt:#FDF6E3;
+--tri:#2D6A4F; --tri-lt:#E9F5EF;
+--hi:#A03060; --hi-lt:#FCEDF3;
+--accent-dk:#F09050; --accent-lt-dk:#2E1A0C; --accent-hv-dk:#F4AD78;
+--sec-dk:#E4C24A; --sec-lt-dk:#2A2210;
+--tri-dk:#52B788; --tri-lt-dk:#1A2E24;
+--hi-dk:#E87098; --hi-lt-dk:#2E1520;
+}
+[data-theme="lavender"] {
+--accent:#6C47B8; --accent-lt:#F0ECFA; --accent-hv:#4E3290;
+--sec:#B8478B; --sec-lt:#FAEDF5;
+--tri:#3A7CA5; --tri-lt:#E6F1FA;
+--hi:#C27020; --hi-lt:#FDF2E4;
+--accent-dk:#A68AE0; --accent-lt-dk:#201838; --accent-hv-dk:#C4B0F0;
+--sec-dk:#E07AB5; --sec-lt-dk:#2E152A;
+--tri-dk:#68B8E0; --tri-lt-dk:#142430;
+--hi-dk:#E8A050; --hi-lt-dk:#2A1E0E;
+}
+[data-theme="slate"] {
+--accent:#4A5568; --accent-lt:#EDF0F4; --accent-hv:#2D3748;
+--sec:#2B6CB0; --sec-lt:#EBF4FF;
+--tri:#7B6B3A; --tri-lt:#F9F5EA;
+--hi:#9B4040; --hi-lt:#FAECEC;
+--accent-dk:#A0AEC0; --accent-lt-dk:#1A1E28; --accent-hv-dk:#CBD5E0;
+--sec-dk:#63B3ED; --sec-lt-dk:#152033;
+--tri-dk:#D4B86A; --tri-lt-dk:#282010;
+--hi-dk:#F08080; --hi-lt-dk:#2A1414;
+}
+[data-theme="rose"] {
+--accent:#B8365A; --accent-lt:#FCEDF1; --accent-hv:#8C2844;
+--sec:#7C4DAA; --sec-lt:#F2ECF9;
+--tri:#2D7E6F; --tri-lt:#E5F5F0;
+--hi:#B07820; --hi-lt:#FDF4E5;
+--accent-dk:#F07898; --accent-lt-dk:#2E1520; --accent-hv-dk:#F4A0B8;
+--sec-dk:#B890E0; --sec-lt-dk:#201838;
+--tri-dk:#4ECAB5; --tri-lt-dk:#0F2925;
+--hi-dk:#E8B44A; --hi-lt-dk:#2A2210;
+}
+
+/* ═══════ LIGHT MODE BASE ═══════ */
+:root {
+--bg:#FAF8F5; --bg-card:#FFFFFF; --bg-hov:#F3F0EB;
+--txt:#1A1A18; --txt2:#6B6A65; --txt3:#9C9B95;
+--brd:#E8E5DE;
+--sh-sm:0 1px 2px rgba(0,0,0,.04); --sh-md:0 4px 16px rgba(0,0,0,.06);
+--r:12px; --rl:16px;
+}
+
+/* ═══════ DARK MODE ═══════ */
+[data-mode="dark"] {
+--bg:#141413; --bg-card:#1E1E1C; --bg-hov:#2A2A27;
+--txt:#EDECEA; --txt2:#A3A29C; --txt3:#6B6A65;
+--brd:#2E2E2B;
+--sh-sm:0 1px 2px rgba(0,0,0,.2); --sh-md:0 4px 16px rgba(0,0,0,.3);
+--accent:var(--accent-dk); --accent-lt:var(--accent-lt-dk); --accent-hv:var(--accent-hv-dk);
+--sec:var(--sec-dk); --sec-lt:var(--sec-lt-dk);
+--tri:var(--tri-dk); --tri-lt:var(--tri-lt-dk);
+--hi:var(--hi-dk); --hi-lt:var(--hi-lt-dk);
+}
+@media (prefers-color-scheme: dark) {
+[data-mode="auto"] {
+--bg:#141413; --bg-card:#1E1E1C; --bg-hov:#2A2A27;
+--txt:#EDECEA; --txt2:#A3A29C; --txt3:#6B6A65;
+--brd:#2E2E2B;
+--sh-sm:0 1px 2px rgba(0,0,0,.2); --sh-md:0 4px 16px rgba(0,0,0,.3);
+--accent:var(--accent-dk); --accent-lt:var(--accent-lt-dk); --accent-hv:var(--accent-hv-dk);
+--sec:var(--sec-dk); --sec-lt:var(--sec-lt-dk);
+--tri:var(--tri-dk); --tri-lt:var(--tri-lt-dk);
+--hi:var(--hi-dk); --hi-lt:var(--hi-lt-dk);
+}
+}
+
+/* ═══════ COMPONENTS ═══════ */
+body { font-family:'DM Sans',system-ui,sans-serif; background:var(--bg); color:var(--txt); line-height:1.6; min-height:100vh; transition:background .3s,color .3s; }
+
+.mode-toggle {
+position:fixed; top:1rem; right:1rem; z-index:100;
+display:flex; gap:0; background:var(--bg-card); border:1px solid var(--brd);
+border-radius:100px; padding:3px; box-shadow:var(--sh-md); transition:all .3s;
+}
+.mode-toggle button {
+all:unset; width:34px; height:34px; border-radius:50%;
+display:flex; align-items:center; justify-content:center;
+cursor:pointer; transition:background .2s; color:var(--txt3);
+}
+.mode-toggle button:hover { background:var(--bg-hov); }
+.mode-toggle button.active { background:var(--accent-lt); color:var(--accent); }
+.mode-toggle button svg { width:18px; height:18px; }
+
+.hero { text-align:center; padding:4rem 1.5rem 3rem; position:relative; overflow:hidden; }
+.hero::before {
+content:''; position:absolute; inset:0; pointer-events:none; opacity:.6; transition:background .3s;
+background:
+radial-gradient(ellipse 60% 50% at 20% 40%, var(--accent-lt) 0%, transparent 70%),
+radial-gradient(ellipse 50% 60% at 80% 30%, var(--sec-lt) 0%, transparent 70%);
+}
+.hero-badge {
+display:inline-block; font-size:.75rem; font-weight:600; letter-spacing:.08em;
+text-transform:uppercase; color:var(--accent); background:var(--accent-lt);
+border:1px solid var(--accent); border-radius:100px; padding:.35rem 1rem;
+margin-bottom:1.25rem; position:relative; transition:all .3s;
+}
+.hero h1 {
+font-family:'DM Serif Display',Georgia,serif;
+font-size:clamp(2rem,5vw,3.2rem); font-weight:400;
+line-height:1.15; letter-spacing:-.02em; margin-bottom:.75rem; position:relative;
+}
+.hero p { font-size:1.05rem; color:var(--txt2); max-width:480px; margin:0 auto; position:relative; }
+
+.container { max-width:900px; margin:0 auto; padding:0 1.5rem 4rem; }
+
+/* ═══════ TABS ═══════ */
+.tabs {
+display:flex; gap:.35rem; background:var(--bg-card); border:1px solid var(--brd);
+border-radius:100px; padding:4px; margin:0 auto 2.5rem; max-width:340px;
+box-shadow:var(--sh-sm); transition:all .3s;
+}
+.tabs button {
+all:unset; flex:1; text-align:center; padding:.6rem 1rem; font-size:.92rem;
+font-weight:600; color:var(--txt2); border-radius:100px; cursor:pointer;
+transition:all .2s; letter-spacing:.01em;
+}
+.tabs button:hover { color:var(--txt); }
+.tabs button.active {
+background:var(--accent-lt); color:var(--accent);
+box-shadow:0 0 0 1px var(--accent) inset;
+}
+
+.tab-panel { display:none; }
+.tab-panel.active { display:block; animation:fadeUp .35s ease both; }
+
+.section { margin-bottom:2.5rem; }
+.section-header {
+display:flex; align-items:center; gap:.6rem; margin-bottom:1rem;
+padding-bottom:.6rem; border-bottom:1px solid var(--brd); transition:border-color .3s;
+}
+.section-icon {
+width:36px; height:36px; border-radius:10px;
+display:flex; align-items:center; justify-content:center;
+flex-shrink:0; transition:all .3s;
+}
+.section-icon.slides { background:var(--accent-lt); color:var(--accent); }
+.section-icon.material { background:var(--sec-lt); color:var(--sec); }
+.section-icon.questions { background:var(--tri-lt); color:var(--tri); }
+.section-header h2 { font-size:1.15rem; font-weight:600; letter-spacing:-.01em; }
+.section-header span.count { font-size:.8rem; color:var(--txt3); margin-left:auto; }
+
+/* ═══════ GRID — always 2 columns ═══════ */
+.grid { display:grid; grid-template-columns:repeat(2,1fr); gap:.65rem; }
+.grid a {
+display:flex; align-items:center; gap:.6rem; padding:.75rem 1rem;
+background:var(--bg-card); border:1px solid var(--brd); border-radius:var(--r);
+text-decoration:none; color:var(--txt); font-weight:500; font-size:.92rem;
+transition:all .15s ease; box-shadow:var(--sh-sm);
+}
+.grid a:hover,.grid a:focus-visible {
+background:var(--bg-hov); border-color:var(--accent);
+box-shadow:var(--sh-md); transform:translateY(-1px);
+}
+.grid a .pdf-icon {
+width:28px; height:28px; border-radius:6px;
+display:flex; align-items:center; justify-content:center;
+font-size:.7rem; font-weight:700; flex-shrink:0; letter-spacing:.02em; transition:all .3s;
+}
+.pdf-icon.slide { background:var(--accent-lt); color:var(--accent); }
+.pdf-icon.book { background:var(--sec-lt); color:var(--sec); }
+
+/* ═══════ TABLE — matches grid width, 2 even columns ═══════ */
+.q-table {
+width:100%; border-collapse:separate; border-spacing:0;
+background:var(--bg-card); border:1px solid var(--brd);
+border-radius:var(--rl); overflow:hidden; box-shadow:var(--sh-sm); transition:all .3s;
+table-layout:fixed;
+}
+.q-table thead th {
+width:50%;
+text-align:left; font-size:.78rem; font-weight:600; letter-spacing:.04em;
+text-transform:uppercase; color:var(--txt3); padding:.85rem 1rem;
+background:var(--bg-hov); border-bottom:1px solid var(--brd);
+}
+.q-table tbody tr { transition:background .1s; }
+.q-table tbody tr:hover { background:var(--bg-hov); }
+.q-table tbody td { padding:.7rem 1rem; font-size:.92rem; border-bottom:1px solid var(--brd); vertical-align:middle; }
+.q-table tbody tr:last-child td { border-bottom:none; }
+.q-table td:first-child { font-weight:500; }
+.q-table a.pill {
+display:inline-flex; align-items:center; gap:.35rem; padding:.3rem .75rem;
+border-radius:100px; text-decoration:none; font-size:.82rem; font-weight:500; transition:all .15s ease;
+}
+.pill.paper { background:var(--hi-lt); color:var(--hi); }
+.pill.paper:hover,.pill.paper:focus-visible { box-shadow:0 0 0 2px var(--hi); }
+.pill.ms { background:var(--accent-lt); color:var(--accent); }
+.pill.ms:hover,.pill.ms:focus-visible { box-shadow:0 0 0 2px var(--accent); }
+.pill svg { width:14px; height:14px; }
+
+footer {
+text-align:center; padding:2rem 1.5rem 2.5rem;
+border-top:1px solid var(--brd); color:var(--txt3); font-size:.85rem; transition:border-color .3s;
+}
+footer a { color:var(--txt2); text-decoration:none; font-weight:500; transition:color .15s; }
+footer a:hover { color:var(--accent); }
+
+@media (prefers-reduced-motion: no-preference) {
+.hero-badge,.hero h1,.hero p,.tabs,.section,footer { animation:fadeUp .5s ease both; }
+.hero-badge { animation-delay:.05s; }
+.hero h1 { animation-delay:.12s; }
+.hero p { animation-delay:.2s; }
+.tabs { animation-delay:.24s; }
+.section:nth-child(1) { animation-delay:.25s; }
+.section:nth-child(2) { animation-delay:.32s; }
+.section:nth-child(3) { animation-delay:.4s; }
+footer { animation-delay:.5s; }
+}
+@keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+@media (max-width:600px) {
+.hero { padding:3rem 1.25rem 2rem; }
+.grid { gap:.5rem; }
+.grid a { padding:.65rem .75rem; font-size:.85rem; }
+.q-table { font-size:.85rem; }
+.q-table thead th,.q-table tbody td { padding:.6rem .65rem; }
+.pill { font-size:.78rem; padding:.25rem .6rem; }
+.mode-toggle { top:.65rem; right:.65rem; }
+.mode-toggle button { width:30px; height:30px; }
+.tabs { max-width:100%; }
+}
+</style>
+</head>
+<body>
+
+<nav class="mode-toggle" role="group" aria-label="Appearance">
+<button onclick="setMode('light')" id="btn-light" title="Light mode" aria-label="Light mode">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+<button onclick="setMode('auto')" id="btn-auto" title="System default" aria-label="System default">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+</button>
+<button onclick="setMode('dark')" id="btn-dark" title="Dark mode" aria-label="Dark mode">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+</button>
+</nav>
+
+<header class="hero" role="banner">
+<div class="hero-badge" aria-label="Course code">Cambridge AS &amp; A Level</div>
+<h1>IT 9626 Learning Hub</h1>
+<p>Chapter slides, textbook, syllabus, questions &amp; mark schemes — all in one place.</p>
+</header>
+
+<main class="container" role="main">
+
+<div class="tabs" role="tablist" aria-label="Course level">
+<button id="tab-as" class="active" role="tab" aria-selected="true" aria-controls="panel-as" onclick="setTab('as')">AS Level</button>
+<button id="tab-a" role="tab" aria-selected="false" aria-controls="panel-a" onclick="setTab('a')">A Level</button>
+</div>
+
+<!-- ═══════ AS LEVEL PANEL ═══════ -->
+<div id="panel-as" class="tab-panel active" role="tabpanel" aria-labelledby="tab-as">
+
+<section class="section" aria-labelledby="as-slides-heading">
+<div class="section-header">
+<div class="section-icon slides" aria-hidden="true">
+<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+</div>
+<h2 id="as-slides-heading">Slides</h2>
+<span class="count"></span>
+</div>
+<div class="grid" role="list">
+<!-- Add AS slides here, e.g.:
+<a href="https://polamahmud.github.io/9626/AS_Ch1.pdf" role="listitem" target="_blank" rel="noopener"><span class="pdf-icon slide" aria-hidden="true">PDF</span> Chapter 1</a>
+-->
+</div>
+</section>
+
+<section class="section" aria-labelledby="as-material-heading">
+<div class="section-header">
+<div class="section-icon material" aria-hidden="true">
+<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+</div>
+<h2 id="as-material-heading">Material</h2>
+</div>
+<div class="grid" role="list">
+<!-- Add AS materials here, e.g.:
+<a href="https://polamahmud.github.io/9626/BOK_AS.pdf" role="listitem" target="_blank" rel="noopener"><span class="pdf-icon book" aria-hidden="true">PDF</span> Textbook</a>
+<a href="https://polamahmud.github.io/9626/9626S.pdf" role="listitem" target="_blank" rel="noopener"><span class="pdf-icon book" aria-hidden="true">PDF</span> Syllabus</a>
+-->
+</div>
+</section>
+
+<section class="section" aria-labelledby="as-questions-heading">
+<div class="section-header">
+<div class="section-icon questions" aria-hidden="true">
+<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+</div>
+<h2 id="as-questions-heading">Mark Schemes</h2>
+<span class="count"></span>
+</div>
+<table class="q-table">
+<thead><tr><th scope="col">Paper</th><th scope="col">Marking Scheme</th></tr></thead>
+<tbody>
+<!-- Add AS papers here, e.g.:
+<tr>
+<td>S25-11</td>
+<td><a class="pill paper" href="https://polamahmud.github.io/9626/AS_S25-11.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Mark Scheme</a></td>
+</tr>
+-->
+</tbody>
+</table>
+</section>
+
+</div>
+
+<!-- ═══════ A LEVEL PANEL ═══════ -->
+<div id="panel-a" class="tab-panel" role="tabpanel" aria-labelledby="tab-a">
+
+<section class="section" aria-labelledby="a-slides-heading">
+<div class="section-header">
+<div class="section-icon slides" aria-hidden="true">
+<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+</div>
+<h2 id="a-slides-heading">Slides</h2>
+<span class="count"></span>
+</div>
+<div class="grid" role="list">
+<!-- Add A Level slides here -->
+</div>
+</section>
+
+<section class="section" aria-labelledby="a-material-heading">
+<div class="section-header">
+<div class="section-icon material" aria-hidden="true">
+<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+</div>
+<h2 id="a-material-heading">Material</h2>
+</div>
+<div class="grid" role="list">
+<!-- Add A Level materials here -->
+</div>
+</section>
+
+<section class="section" aria-labelledby="a-questions-heading">
+<div class="section-header">
+<div class="section-icon questions" aria-hidden="true">
+<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+</div>
+<h2 id="a-questions-heading">Mark Schemes</h2>
+<span class="count"></span>
+</div>
+<table class="q-table">
+<thead><tr><th scope="col">Paper</th><th scope="col">Marking Scheme</th></tr></thead>
+<tbody>
+<!-- Add A Level papers here -->
+</tbody>
+</table>
+</section>
+
+</div>
+
+</main>
+
+<footer>
+<p>IT 9626 Learning Hub &middot; <a href="https://www.tiktok.com/@projectdoomscroll" target="_blank" rel="noopener">Project Doomscroll</a></p>
+</footer>
+
+<script>
+function setMode(mode) {
+document.documentElement.setAttribute('data-mode', mode);
+localStorage.setItem('it9626-mode', mode);
+updateButtons(mode);
+}
+function updateButtons(mode) {
+document.getElementById('btn-light').classList.toggle('active', mode === 'light');
+document.getElementById('btn-auto').classList.toggle('active', mode === 'auto');
+document.getElementById('btn-dark').classList.toggle('active', mode === 'dark');
+}
+updateButtons(document.documentElement.getAttribute('data-mode') || 'auto');
+
+function setTab(which) {
+var isAS = which === 'as';
+document.getElementById('tab-as').classList.toggle('active', isAS);
+document.getElementById('tab-a').classList.toggle('active', !isAS);
+document.getElementById('tab-as').setAttribute('aria-selected', isAS);
+document.getElementById('tab-a').setAttribute('aria-selected', !isAS);
+document.getElementById('panel-as').classList.toggle('active', isAS);
+document.getElementById('panel-a').classList.toggle('active', !isAS);
+localStorage.setItem('it9626-tab', which);
+}
+var savedTab = localStorage.getItem('it9626-tab');
+if (savedTab === 'a') setTab('a');
+</script>
+
+</body>
+</html>
